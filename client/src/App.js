@@ -91,17 +91,9 @@ function App() {
           <span>+</span>
           New Chat
         </div>
-        <div className="models">
-      {/* <select>
-          {models.map((model,index) => (
-          <option key={model.id} value={model.id}>{model.id}
-          </option>
-          ))}
-      </select> */}
-    </div>  
       </aside>
       <section className="chatbox">
-        <div style={{overflow:"scroll", height:"85vh"}} className="chat-log">
+        <div style={{overflowY:"scroll", height:"85vh"}} className="chat-log">
           {chatLog.map((message, index) => (
             <ChatMessage key={index} message={message} />
           ))}
