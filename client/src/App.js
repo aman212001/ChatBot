@@ -22,7 +22,7 @@ function App() {
   }
 
   function getEngines() {
-    fetch("http://localhost:3080/models")
+    fetch("https://comforting-sundae-636321.netlify.app/.netlify/functions/api/models")
       .then((res) => res.json())
       .then((data) => {
         console.log(data.models.data);
@@ -37,7 +37,7 @@ function App() {
     setChatLog(chatLogNew);
     //Fetch response to the api and then combining the chatlog array of message and sending it as a message to the localhost : 3000 as a post
     const messages = chatLogNew.map((message) => message.message).join("\n");
-    const response = await fetch("http://localhost:3080/", {
+    const response = await fetch("https://comforting-sundae-636321.netlify.app/.netlify/functions/api/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
