@@ -13,6 +13,9 @@
 backend/build
 client/build
 
+# env file
+backend/.env
+
 # misc
 .DS_Store
 .env.local
