@@ -10,10 +10,6 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 //const response = await openai.listEngines();
 
-
-
-
-
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
@@ -47,6 +43,6 @@ app.get('/models', async (req,res)=> {
 });
 
 app.listen(port, ()=> {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`App listening at Port:${port}`)
 });
 
