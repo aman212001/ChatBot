@@ -58,9 +58,12 @@ left: 0; right: 0;
 
 }
 
-.chat-log{
- 
+.chatlog{
   text-align: left;
+}
+
+.chatlog::-webkit-scrollbar {
+  width: 5px;
 }
 
 .chatgpt-message{

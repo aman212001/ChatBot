@@ -91,9 +91,19 @@ function App() {
     );
   };
 
+  const scrollToBottom = () => {
+    var chatlogDiv = document.getElementById("chatlog")
+    const height = chatlogDiv.scrollHeight;
+    chatlogDiv.scrollBy(0, height)
+  }
+
   useEffect(() => {
     getEngines();
   }, []);
+
+  useEffect(() => {
+    chatLog && scrollToBottom()
+  }, [chatLog])
 
   return (
     <div className="App">
@@ -105,8 +115,9 @@ function App() {
       </aside>
       <section className="chatbox">
         <div
-          style={{ overflowY: "scroll", height: "85vh" }}
-          className="chat-log"
+          style={{overflowY:"scroll", height: "85vh", scrollbarWidth: "thin"}}
+          className="chatlog"
+          id="chatlog"
         >
           {chatLog.map((message, index) => (
             <ChatMessage key={index} message={message} />
