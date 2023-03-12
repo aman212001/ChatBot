@@ -10,16 +10,15 @@ function App() {
     {
       user: "gpt",
       message: "How can I help you?",
-    },
-    {
-      user: "me",
-      message: "I want to use chatgpt today",
-    },
+    }
   ]);
 
   //clear chat button
   function clearChat() {
-    setChatLog([]);
+    setChatLog([ {
+      user: "gpt",
+      message: "How can I help you?",
+    }]);
   }
 
   function getEngines() {
